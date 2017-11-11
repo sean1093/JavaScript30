@@ -12,8 +12,8 @@
 這篇主要目標是要學習如何使用最新 CSS3 變數的用法
 
 第一個重點就是如何使用 CSS3 的變數:
-:root 命名變數，我們也可以在任意的選擇器內命名變數
---base 是變數名字，#ffc600 是變數值。
+* :root 命名變數，我們也可以在任意的選擇器內命名變數
+* --base 是變數名字，#ffc600 是變數值。
 
 我們先定義三個變數
 
@@ -71,11 +71,11 @@
 ## 相關觀念
 
 CSS3 新增了變數的屬性，讓在 CSS 中也能像平常在寫 SASS 或 LESS 一樣，將重覆的參數，直接用一個名稱代替
-參考: 
-https://developer.mozilla.org/zh-TW/docs/Web/CSS/:root
-http://muki.tw/tech/native-css-variables/
+* 參考: 
+* https://developer.mozilla.org/zh-TW/docs/Web/CSS/:root
+* http://muki.tw/tech/native-css-variables/
 
 
 CSS3 提供了濾鏡效果 filter
-blur(): 高斯模糊
-參考: https://developer.mozilla.org/zh-TW/docs/Web/CSS/filter
+* blur(): 高斯模糊
+* 參考: https://developer.mozilla.org/zh-TW/docs/Web/CSS/filter
