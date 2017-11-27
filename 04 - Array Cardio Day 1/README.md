@@ -43,13 +43,13 @@ const newArray = [2,5,7,9].map((e) => {
 ex: 一些在 https://developer.mozilla.org 上的經典例子
 
 ```js
-var fruit = ['apples', 'bananas', 'Cherries'];
+let fruit = ['apples', 'bananas', 'Cherries'];
 fruit.sort(); // ['Cherries', 'apples', 'bananas'];
 
-var scores = [1, 2, 10, 21]; 
+let scores = [1, 2, 10, 21]; 
 scores.sort(); // [1, 10, 2, 21]
 
-var things = ['word', 'Word', '1 Word', '2 Words'];
+let things = ['word', 'Word', '1 Word', '2 Words'];
 things.sort(); // ['1 Word', '2 Words', 'Word', 'word']
 
 // 在Unicode中, 數字在大寫字母前,
@@ -58,3 +58,41 @@ things.sort(); // ['1 Word', '2 Words', 'Word', 'word']
 
 #### compareFunction
 
+* 觀念:
+1. compareFunction(a, b) return 小於 0, 將 a 排在比 b index 還小處
+2. compareFunction(a, b) return 0, a 與 b 互相不會改變順序
+3. compareFunction(a, b) return 大於 0, 將 b 排在比 a index 還小處
+
+最常見的例子就是實作 sort by number
+
+```js
+const array = [8,10,3,6,1,39];
+array.sort();
+// ==> [1, 10, 3, 39, 6, 8]
+
+const array2 = [8,10,3,6,1,39];
+// 這裡利用 a-b ，如果 a < b 這樣就會回傳負數值，a 就會被排在比 b index 還小處
+array2.sort((a,b)=> a-b)
+// ==> [1, 3, 6, 8, 10, 39]
+
+```
+
+### reduce
+
+這是一個可以作為累加器的 function
+
+```js
+Array.prototype.reduce(
+  (accumulator, currentValue, currentIndex, array) => {
+    return accumulator + currentValue;
+  },
+  initValue
+);
+
+// example
+
+[0, 1, 2, 3, 4].reduce( (prev, curr) => prev + curr ); // 10
+
+[0, 1, 2, 3, 4].reduce( (prev, curr) => prev + curr, 10 ); // 20
+
+```
